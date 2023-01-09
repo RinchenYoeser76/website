@@ -1,0 +1,481 @@
+<html>
+<head><title>My school</title></head>
+<body>
+<script type="text/javascript">
+
+
+/******************************************
+* Snow Effect Script- By Altan d.o.o. (http://www.altan.hr/snow/index.html)
+* Visit Dynamic Drive DHTML code library (http://www.dynamicdrive.com/) for full source code
+* Last updated Nov 9th, 05' by DD. This notice must stay intact for use
+******************************************/
+  
+  //Configure below to change URL path to the snow image
+  var snowsrc="snow.gif"
+  // Configure below to change number of snow to render
+  var no = 10;
+  // Configure whether snow should disappear after x seconds (0=never):
+  var hidesnowtime = 0;
+  // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
+  var snowdistance = "pageheight";
+
+///////////Stop Config//////////////////////////////////
+
+  var ie4up = (document.all) ? 1 : 0;
+  var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+
+	function iecompattest(){
+	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+	}
+
+  var dx, xp, yp;    // coordinate and position variables
+  var am, stx, sty;  // amplitude and step variables
+  var i, doc_width = 800, doc_height = 600; 
+  
+  if (ns6up) {
+    doc_width = self.innerWidth;
+    doc_height = self.innerHeight;
+  } else if (ie4up) {
+    doc_width = iecompattest().clientWidth;
+    doc_height = iecompattest().clientHeight;
+  }
+
+  dx = new Array();
+  xp = new Array();
+  yp = new Array();
+  am = new Array();
+  stx = new Array();
+  sty = new Array();
+  snowsrc=(snowsrc.indexOf("dynamicdrive.com")!=-1)? "snow.gif" : snowsrc
+  for (i = 0; i < no; ++ i) {  
+    dx[i] = 0;                        // set coordinate variables
+    xp[i] = Math.random()*(doc_width-50);  // set position variables
+    yp[i] = Math.random()*doc_height;
+    am[i] = Math.random()*20;         // set amplitude variables
+    stx[i] = 0.02 + Math.random()/10; // set step variables
+    sty[i] = 0.7 + Math.random();     // set step variables
+		if (ie4up||ns6up) {
+      if (i == 0) {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='"+snowsrc+"' border=\"0\"><\/a><\/div>");
+      } else {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"><\/div>");
+      }
+    }
+  }
+
+  function snowIE_NS6() {  // IE and NS6 main animation function
+    doc_width = ns6up?window.innerWidth-10 : iecompattest().clientWidth-10;
+		doc_height=(window.innerHeight && snowdistance=="windowheight")? window.innerHeight : (ie4up && snowdistance=="windowheight")?  iecompattest().clientHeight : (ie4up && !window.opera && snowdistance=="pageheight")? iecompattest().scrollHeight : iecompattest().offsetHeight;
+    for (i = 0; i < no; ++ i) {  // iterate for every dot
+      yp[i] += sty[i];
+      if (yp[i] > doc_height-50) {
+        xp[i] = Math.random()*(doc_width-am[i]-30);
+        yp[i] = 0;
+        stx[i] = 0.02 + Math.random()/10;
+        sty[i] = 0.7 + Math.random();
+      }
+      dx[i] += stx[i];
+      document.getElementById("dot"+i).style.top=yp[i]+"px";
+      document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i])+"px";  
+    }
+    snowtimer=setTimeout("snowIE_NS6()", 10);
+  }
+
+	function hidesnow(){
+		if (window.snowtimer) clearTimeout(snowtimer)
+		for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="hidden"
+	}
+		
+
+if (ie4up||ns6up){
+    snowIE_NS6();
+		if (hidesnowtime>0)
+		setTimeout("hidesnow()", hidesnowtime*1000)
+		}
+
+</script>
+<h1 align="center">
+<font size=7 face="berlin sans fb" color="yellow" align="Center">K</font>
+<font size=6 face="berlin sans fb" color="orange" align="Center">U</font>
+<font size=5 face="berlin sans fb" color="red" align="Center">Z</font>
+<font size=4 face="berlin sans fb" color="green" align="Center">U</font>
+<font size=3 face="berlin sans fb" color="blue" align="Center">Z</font>
+<font size=3 face="berlin sans fb" color="blue" align="Center">A</font>
+<font size=4 face="berlin sans fb" color="green" align="Center">N</font>
+<font size=5 face="berlin sans fb" color="red" align="Center">G</font>
+<font size=6 face="berlin sans fb" color="orange" align="Center">P</font>
+<font size=7 face="berlin sans fb" color="yellow" align="Center">O</font>
+</h1>
+<marquee behavior="alternate" direction="left"><font color="Blue">
+Welcome To My Web Page</font>
+</marquee>
+<script language="Javascript"type="text/javascript">
+function Playsound() {
+  var sound=document.getElementById("songs");
+  try {
+    // Realplayer
+    sound.DoPlay();
+  } catch (e) {
+    try {
+      // Windows Media / Quicktime
+      sound.Play();
+    } catch (e) {
+      alert("No sound support.");
+    }
+  }
+}
+</script>
+<embed id="songs" src="Luv Letter.mp3" width="0" height="0"
+  autostart="false" enablejavascript="true"/>
+<script language="javascript" type="text/javascript"
+   src="slideshow2.js">
+</script>
+<h2><script language="JavaScript1.2">
+
+//Neon Lights Text II by G.P.F. (gpf@beta-cc.de)
+//visit http://www.beta-cc.de
+//Visit http://www.dynamicdrive.com for this script 
+
+var message="Current Date and Time"
+var neonbasecolor="gray"
+var neontextcolor="yellow"
+var neontextcolor2="#FFFFA8"
+var flashspeed=100						// speed of flashing in milliseconds
+var flashingletters=3						// number of letters flashing in neontextcolor
+var flashingletters2=1						// number of letters flashing in neontextcolor2 (0 to disable)
+var flashpause=0						// the pause between flash-cycles in milliseconds
+
+///No need to edit below this line/////
+
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+function neon(){
+
+//Change all letters to base color
+if (n==0){
+for (m=0;m<message.length;m++)
+crossref(m).style.color=neonbasecolor
+}
+
+//cycle through and change individual letters to neon color
+crossref(n).style.color=neontextcolor
+
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor
+
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",flashpause)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+
+</script></h2>
+<script language="Javascript" type="text/javascript"
+ src = "timegreet.js">
+</script> 
+<img src="miss u.gif"width="150"height="100"align="center">
+
+<A href="expando.html">Bidha<A/>
+<A href="sound.html">Wai minchu boom</A><br>
+
+<A href="RY.jpg"><img src="RY.jpg" alt="rinchen pic" width="380"height="480"></A>
+<!--Alt is shown instead of image if image fails to show because of slow internet or so-->
+<img src="love you.gif"width="75"height="80"align="center">
+<A href="bidha.jpg"><img src="bidha.jpg"width="380"height="480"align="right">
+<br>
+<body background="backgroundragon.jpg">
+
+<A HREF="http://www.yoeserrinchen@gmail.com">Email</A>
+<A href="Presentation1.pptx">PPT<A/>
+<A href="my favourites...html">Favourite<A/>
+<A href="Allah Maaf Kare - Desi Boyz (2011) _HD_ 1080p _BluRay_ Music Video.mp4">Allah</A>
+<A href="Introduction to the Mesh-Current Method.mp4">Mesh</A>
+<A href="Sem ghawe medi.mp4">Fav song</A>
+<style type="text/css">
+
+#popitmenu{
+position: absolute;
+background-color: white;
+border:1px solid black;
+font: normal 12px Verdana;
+line-height: 18px;
+z-index: 100;
+visibility: hidden;
+}
+
+#popitmenu a{
+text-decoration: none;
+padding-left: 6px;
+color: black;
+display: block;
+}
+
+#popitmenu a:hover{ /*hover background color*/
+background-color: #CCFF9D;
+}
+
+</style>
+
+<script type="text/javascript">
+
+/***********************************************
+* Pop-it menu- © Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var defaultMenuWidth="150px" //set default menu width.
+
+var linkset=new Array()
+//SPECIFY MENU SETS AND THEIR LINKS. FOLLOW SYNTAX LAID OUT
+
+linkset[0]='<a href="http://dynamicdrive.com">RY</a>'
+linkset[0]+='<hr>' //Optional Separator
+linkset[0]+='<"http://www.yoeserrinchen@gmail.com">Email</a>'
+linkset[0]+='<a href="Sem ghawe medi.mp4">Fav song</a>'
+
+////No need to edit beyond here
+
+var ie5=document.all && !window.opera
+var ns6=document.getElementById
+
+if (ie5||ns6)
+document.write('<div id="popitmenu" onMouseover="clearhidemenu();" onMouseout="dynamichide(event)"></div>')
+
+function iecompattest(){
+return (document.compatMode && document.compatMode.indexOf("CSS")!=-1)? document.documentElement : document.body
+}
+
+function showmenu(e, which, optWidth){
+if (!document.all&&!document.getElementById)
+return
+clearhidemenu()
+menuobj=ie5? document.all.popitmenu : document.getElementById("popitmenu")
+menuobj.innerHTML=which
+menuobj.style.width=(typeof optWidth!="undefined")? optWidth : defaultMenuWidth
+menuobj.contentwidth=menuobj.offsetWidth
+menuobj.contentheight=menuobj.offsetHeight
+eventX=ie5? event.clientX : e.clientX
+eventY=ie5? event.clientY : e.clientY
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie5? iecompattest().clientWidth-eventX : window.innerWidth-eventX
+var bottomedge=ie5? iecompattest().clientHeight-eventY : window.innerHeight-eventY
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<menuobj.contentwidth)
+//move the horizontal position of the menu to the left by it's width
+menuobj.style.left=ie5? iecompattest().scrollLeft+eventX-menuobj.contentwidth+"px" : window.pageXOffset+eventX-menuobj.contentwidth+"px"
+else
+//position the horizontal position of the menu where the mouse was clicked
+menuobj.style.left=ie5? iecompattest().scrollLeft+eventX+"px" : window.pageXOffset+eventX+"px"
+//same concept with the vertical position
+if (bottomedge<menuobj.contentheight)
+menuobj.style.top=ie5? iecompattest().scrollTop+eventY-menuobj.contentheight+"px" : window.pageYOffset+eventY-menuobj.contentheight+"px"
+else
+menuobj.style.top=ie5? iecompattest().scrollTop+event.clientY+"px" : window.pageYOffset+eventY+"px"
+menuobj.style.visibility="visible"
+return false
+}
+
+function contains_ns6(a, b) {
+//Determines if 1 element in contained in another- by Brainjar.com
+while (b.parentNode)
+if ((b = b.parentNode) == a)
+return true;
+return false;
+}
+
+function hidemenu(){
+if (window.menuobj)
+menuobj.style.visibility="hidden"
+}
+
+function dynamichide(e){
+if (ie5&&!menuobj.contains(e.toElement))
+hidemenu()
+else if (ns6&&e.currentTarget!= e.relatedTarget&& !contains_ns6(e.currentTarget, e.relatedTarget))
+hidemenu()
+}
+
+function delayhidemenu(){
+delayhide=setTimeout("hidemenu()",500)
+}
+
+function clearhidemenu(){
+if (window.delayhide)
+clearTimeout(delayhide)
+}
+
+if (ie5||ns6)
+document.onclick=hidemenu
+
+</script>
+</head>
+<body>
+<a href="#" onMouseover="showmenu(event,linkset[0])" onMouseout="delayhidemenu()">Webmaster Links</a><br>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="ddaccordion.js">
+
+/***********************************************
+* Accordion Content script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+* This notice must stay intact for legal use
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddaccordion.init({
+	headerclass: "headerbar", //Shared CSS class name of headers group
+	contentclass: "submenu", //Shared CSS class name of contents group
+	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false
+	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+	onemustopen: true, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", "selected"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "normal", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+</script>
+
+<style type="text/css">
+
+.urbangreymenu{
+width: 190px; /*width of menu*/
+}
+
+.urbangreymenu .headerbar{
+font: bold 13px Verdana;
+color: white;
+background: Blue url(arrowstop.gif) no-repeat 8px 6px; /*last 2 values are the x and y coordinates of bullet image*/
+margin-bottom: 0; /*bottom spacing between header and rest of content*/
+text-transform: uppercase;
+padding: 7px 0 7px 31px; /*31px is left indentation of header text*/
+}
+
+.urbangreymenu .headerbar a{
+text-decoration: none;
+color: white;
+display: block;
+}
+
+.urbangreymenu ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+margin-bottom: 0; /*bottom spacing between each UL and rest of content*/
+}
+
+.urbangreymenu ul li{
+padding-bottom: 2px; /*bottom spacing between menu items*/
+}
+
+.urbangreymenu ul li a{
+font: normal 12px Arial;
+color: Black;
+background: white;
+display: block;
+padding: 5px 0;
+line-height: 17px;
+padding-left: 8px; /*link text is indented 8px*/
+text-decoration: none;
+}
+
+.urbangreymenu ul li a:visited{
+color: black;
+}
+
+.urbangreymenu ul li a:hover{ /*hover state CSS*/
+color: white;
+background: green;
+}
+
+</style>
+
+<body>
+<div class="iframe-container">
+  <!--iframe link is the link to the jsfiddle-->
+  <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/ad50d85d-f088-44e5-8a4b-2fad0e0b99df"></iframe>
+</div>
+
+<style>
+  .iframe-container {
+		text-align:right;
+  		width:100%;
+  }
+</style>
+
+<div class="urbangreymenu">
+
+<h3 class="headerbar">CSS Library</a></h3>
+<ul class="submenu">
+<li><a href="8.jpeg">Sweet Heart</a></li>
+<li><a href="https://drajmarsh.bitbucket.io/daylight-box.html">Dynamic Daylighting Online Software For improving daylight in green homes(UGREEN_US)</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C2/">Vertical CSS Menus</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C4/">Image CSS</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C6/">Form CSS</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C5/">DIVs and containers</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C7/">Links & Buttons</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C8/">Other</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/all/">Browse All</a></li>
+</ul>
+
+<h3 class="headerbar"><a href="http://www.javascriptkit.com">JavaScript Kit</a></h3>
+<ul class="submenu">
+<li><a href="http://www.javascriptkit.com/cutpastejava.shtml" >Free JavaScripts</a></li>
+<li><a href="http://www.javascriptkit.com/javatutors/">JavaScript tutorials</a></li>
+<li><a href="http://www.javascriptkit.com/jsref/">JavaScript Reference</a></li>
+<li><a href="http://www.javascriptkit.com/dhtmltutors/">DHTML & CSS</a></li>
+<li><a href="http://www.javascriptkit.com/howto/">Web Design</a></li>
+<li><a href="http://www.javascriptkit.com/java/">Free Java Applets</a></li>		
+</ul>
+
+</div>
+<style>
+  .urbangreymenu {
+		text-align:top;
+  		width:20%;
+  }
+</style>
+</body>
+</html>
+

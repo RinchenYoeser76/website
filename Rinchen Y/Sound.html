@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Sound Test</title>
+<script language="Javascript"type="text/javascript">
+function Playsound() {
+  var sound=document.getElementById("songs");
+  try {
+    // Realplayer
+    sound.DoPlay();
+  } catch (e) {
+    try {
+      // Windows Media / Quicktime
+      sound.Play();
+    } catch (e) {
+      alert("No sound support.");
+    }
+  }
+}
+</script>
+</head>
+<body>
+<h1>Sound Test</h1>
+<embed id="songs" src="phuba thinley-wai minchu boom.mp3" width="400" height="200"
+  autostart="false" enablejavascript="true"/>
+<a href="my school page.html"valign="bottom">Back</a>
+</body>
+</html>  

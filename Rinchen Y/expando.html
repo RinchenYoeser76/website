@@ -1,0 +1,58 @@
+<html>
+<head>
+<script language="Javascript"type="text/javascript">
+function Playsound() {
+  var sound=document.getElementById("songs");
+  try {
+    // Realplayer
+    sound.DoPlay();
+  } catch (e) {
+    try {
+      // Windows Media / Quicktime
+      sound.Play();
+    } catch (e) {
+      alert("No sound support.");
+    }
+  }
+}
+</script>
+<embed id="songs" src="phuba thinley-wai minchu boom.mp3" width="0" height="0"
+  autostart="false" enablejavascript="true"/>
+<script language="javascript" type="text/javascript"
+   src="slideshow2.js">
+</script>
+<img border="0" src="Love You.gif" width="80" height="150" align="left"><br>
+<img border="0" src="Love You.gif" width="80" height="150" align="left">
+<img border="0" src="Love You.gif" width="80" height="150" align="right"><br>
+<img border="0" src="Love You.gif" width="80" height="150" align="right">
+<style type="text/css">
+
+img.expando{ /*sample CSS for expando images. Not required but recommended*/
+border: none;
+vertical-align: top; /*top aligns image, so mouse has less of a change of moving out of image while image is expanding*/
+}
+
+</style>
+
+<script type="text/javascript" src="expando.js">
+
+/* Expando Image Script ©2008 John Davenport Scheuer
+   as first seen in http://www.dynamicdrive.com/forums/
+   username: jscheuer1 - This Notice Must Remain for Legal Use
+   */
+
+</script>
+</head>
+<body background="pine.jpg">
+<p align="center">
+<img class="expando DY" border="0" src="bidha.jpg" width="200" height="300">
+<img class="expando DY" border="0" src="1.jpg" width="200" height="300">
+<img class="expando DY" border="0" src="2.jpeg" width="200" height="300">
+<img class="expando DY" border="0" src="3.jpg" width="200" height="300">
+<br>
+<img class="expando DY" border="0" src="4.jpeg" width="200" height="300">
+<img class="expando DY" border="0" src="5.jpeg" width="200" height="300">
+<img class="expando DY" border="0" src="6.jpg" width="200" height="300">
+<img class="expando DY" border="0" src="7.jpeg" width="200" height="300">
+</p>
+</html>
